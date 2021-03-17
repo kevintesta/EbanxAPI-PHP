@@ -22,6 +22,6 @@ class Account extends Model
      * @var array
      */
     protected $hidden = ['created_at', 'updated_at'];
-    protected $casts = [ 'balance' => 'integer' ];
+    protected $casts = [ 'balance' => 'integer', 'id' => 'string' ];
 
 }
