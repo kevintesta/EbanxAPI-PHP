@@ -81,6 +81,6 @@ class EventController extends BaseController
     public function reset(Request $request)
     {
         $this->accountService->deleteAll();
-        return response()->json(null, 200);
+        return 'OK';
     }
 }
