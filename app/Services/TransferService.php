@@ -13,19 +13,12 @@ class TransferService
     function __construct()
     {
         $this->depositService = new DepositService;
+        $this->withdrawService = new WithdrawService;
     }
     
     public function execute(Request $request) {
 
-        $account = Account::find($request->origin);
-        if (!$account) {            
-            abort(404, 0);
-        }
-
-        $account->update([
-            'balance' => $account->balance - $request->amount
-        ]);
-        
+        $this->withdrawService->execute($request);
         $this->depositService->execute($request);
 
         return;
