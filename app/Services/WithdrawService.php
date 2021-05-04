@@ -14,6 +14,10 @@ class WithdrawService
             abort(404, 0);
         }
         
+        if ($account->balance - $request->amount < -100) {
+            abort(500, 'Saldo insuficiente!');
+        }
+
         $account->update([
             'balance' => $account->balance - $request->amount
         ]);

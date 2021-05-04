@@ -19,7 +19,7 @@ class DepositService
         $account = $this->accountService->getAccountById($request->destination);        
         if (!$account) {            
             return $this->accountService->create($request);
-        }
+        }        
 
         $account->update([
             'balance' => $account->balance + $request->amount
