@@ -5,8 +5,7 @@ namespace App\Services;
 use Illuminate\Http\Request;
 use App\Models\Account;
 
-class WithdrawService
-{
+class WithdrawService {
     public function execute(Request $request) {
 
         $account = Account::find($request->origin);
