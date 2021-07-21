@@ -5,8 +5,7 @@ namespace App\Services;
 use Illuminate\Http\Request;
 use App\Models\Account;
 
-class DepositService
-{
+class DepositService {
     protected $accountService;
 
     function __construct()
